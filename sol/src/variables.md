@@ -32,7 +32,7 @@ fn main() {
 
 ### Scope
 
-3. 🌟 
+3.  
 ```rust,editable
 fn main() {
     let x: i32 = 10;

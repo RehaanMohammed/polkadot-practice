@@ -46,7 +46,7 @@ fn main() {
 } 
 ```
 
-4. 🌟
+4. 
 ```rust, editable
 fn main() {
     let f = true;

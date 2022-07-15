@@ -29,7 +29,7 @@ fn main() {
 }
 ```
 
-2. 🌟
+2.
 ```rust,editable
 fn main() {
    let v = {let x = 3; x}; // Paranthesis can only be used for tuples.
@@ -40,7 +40,7 @@ fn main() {
 }
 ```
 
-3. 🌟
+3.
 ```rust,editable
 fn main() {
     let s = sum(1 , 2);

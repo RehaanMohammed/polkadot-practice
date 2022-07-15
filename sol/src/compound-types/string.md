@@ -171,7 +171,7 @@ fn main() {
 ```
 
 ### Operate on UTF8 string
-12. 🌟
+12.
 ```rust,editable
 fn main() {
     for c in "你好，世界".chars() {

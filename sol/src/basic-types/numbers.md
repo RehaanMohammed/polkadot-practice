@@ -136,7 +136,7 @@ fn main() {
 |iter5| i =	1	sum =	-6 	| 	-6 + 1 		 |
 |iter6| i =	2	sum =	-5 	| 	break; 		 |
 
-10. 🌟🌟 
+10. 
 
 ```rust,editable
 use std::ops::{Range, RangeInclusive};
@@ -149,7 +149,7 @@ fn main() {
 ```
 ### Computations
 
-11. 🌟 
+11. 
 ```rust,editable
 fn main() {
     // Integer addition

@@ -11,7 +11,7 @@ fn main() {
 }
 ```
 
-2. 🌟
+2.
 ```rust,editable
 fn main() {
     let x = 5;
@@ -36,7 +36,7 @@ fn main() {
 fn borrow_object(s: &String) {}
 ```
 
-4. 🌟
+4.
 ```rust,editable
 fn main() {
     let mut s = String::from("hello, ");

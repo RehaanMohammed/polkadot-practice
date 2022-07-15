@@ -44,7 +44,7 @@ fn main() {
     println!("Success!");
 }
 ```
-5. 🌟 Indexing starts at 0.
+5.
 ```rust,editable
 fn main() {
     let arr = ['a', 'b', 'c'];

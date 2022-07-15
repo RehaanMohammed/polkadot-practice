@@ -100,7 +100,7 @@ fn never_return_fn() -> ! {
 // }
 ```
 
-5. 🌟🌟
+5.
 ```rust,editable
 fn main() {
     let b = false;
