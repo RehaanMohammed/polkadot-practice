@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Patterns - Rust By Practice</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Learn Rust with Example, Exercise and real Practice, written with ❤️ by https://course.rs team">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/style1.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">- Rust By Practice</li><li class="chapter-item expanded affix "><li class="part-title">- Small projects with Elegant code</li><li class="chapter-item expanded "><a href="../variables.html"><strong aria-hidden="true">1.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../basic-types/intro.html"><strong aria-hidden="true">2.</strong> Basic Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../basic-types/numbers.html"><strong aria-hidden="true">2.1.</strong> Numbers</a></li><li class="chapter-item "><a href="../basic-types/char-bool-unit.html"><strong aria-hidden="true">2.2.</strong> Char, Bool and Unit</a></li><li class="chapter-item "><a href="../basic-types/statements-expressions.html"><strong aria-hidden="true">2.3.</strong> Statements and Expressions</a></li><li class="chapter-item "><a href="../basic-types/functions.html"><strong aria-hidden="true">2.4.</strong> Functions</a></li></ol></li><li class="chapter-item expanded "><a href="../ownership/intro.html"><strong aria-hidden="true">3.</strong> Ownership and Borrowing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ownership/ownership.html"><strong aria-hidden="true">3.1.</strong> Ownership</a></li><li class="chapter-item "><a href="../ownership/borrowing.html"><strong aria-hidden="true">3.2.</strong> Reference and Borrowing</a></li></ol></li><li class="chapter-item expanded "><a href="../compound-types/intro.html"><strong aria-hidden="true">4.</strong> Compound Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../compound-types/string.html"><strong aria-hidden="true">4.1.</strong> string</a></li><li class="chapter-item "><a href="../compound-types/array.html"><strong aria-hidden="true">4.2.</strong> Array</a></li><li class="chapter-item "><a href="../compound-types/slice.html"><strong aria-hidden="true">4.3.</strong> Slice</a></li><li class="chapter-item "><a href="../compound-types/tuple.html"><strong aria-hidden="true">4.4.</strong> Tuple</a></li><li class="chapter-item "><a href="../compound-types/struct.html"><strong aria-hidden="true">4.5.</strong> Struct</a></li><li class="chapter-item "><a href="../compound-types/enum.html"><strong aria-hidden="true">4.6.</strong> Enum</a></li></ol></li><li class="chapter-item expanded "><a href="../flow-control.html"><strong aria-hidden="true">5.</strong> Flow Control</a></li><li class="chapter-item expanded "><a href="../pattern-match/intro.html"><strong aria-hidden="true">6.</strong> Pattern Match</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../pattern-match/match-iflet.html"><strong aria-hidden="true">6.1.</strong> match, matches! and if let</a></li><li class="chapter-item expanded "><a href="../pattern-match/patterns.html" class="active"><strong aria-hidden="true">6.2.</strong> Patterns</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">- Method & Associated function</li><li class="chapter-item expanded affix "><li class="part-title">- Generics and Traits</li><li class="chapter-item expanded affix "><li class="part-title">- Generics</li><li class="chapter-item expanded affix "><li class="part-title">- Const Generics</li><li class="chapter-item expanded affix "><li class="part-title">- Traits</li><li class="chapter-item expanded affix "><li class="part-title">- Trait Object</li><li class="chapter-item expanded affix "><li class="part-title">- Advanced Traits</li><li class="chapter-item expanded affix "><li class="part-title">- Collection Types</li><li class="chapter-item expanded affix "><li class="part-title">- String</li><li class="chapter-item expanded affix "><li class="part-title">- Vector</li><li class="chapter-item expanded affix "><li class="part-title">- HashMap</li><li class="chapter-item expanded affix "><li class="part-title">- Type Conversion</li><li class="chapter-item expanded affix "><li class="part-title">- as</li><li class="chapter-item expanded affix "><li class="part-title">- From/Into</li><li class="chapter-item expanded affix "><li class="part-title">- Others</li><li class="chapter-item expanded affix "><li class="part-title">- Result and panic</li><li class="chapter-item expanded affix "><li class="part-title">- panic!</li><li class="chapter-item expanded affix "><li class="part-title">- Result and ?</li><li class="chapter-item expanded affix "><li class="part-title">- Crate and Module</li><li class="chapter-item expanded affix "><li class="part-title">- Package and Crate</li><li class="chapter-item expanded affix "><li class="part-title">- Module</li><li class="chapter-item expanded affix "><li class="part-title">- Advanced use and pub</li><li class="chapter-item expanded affix "><li class="part-title">- Comments and Docs</li><li class="chapter-item expanded affix "><li class="part-title">- Formatted output</li><li class="chapter-item expanded affix "><li class="part-title">- println! and format!</li><li class="chapter-item expanded affix "><li class="part-title">- Debug and Display</li><li class="chapter-item expanded affix "><li class="part-title">- formating</li><li class="chapter-item expanded affix "><li class="part-title">- Lifetime</li><li class="chapter-item expanded affix "><li class="part-title">- basic</li><li class="chapter-item expanded affix "><li class="part-title">- &'static and T: 'static</li><li class="chapter-item expanded affix "><li class="part-title">- advanced</li><li class="chapter-item expanded affix "><li class="part-title">- Functional programing</li><li class="chapter-item expanded affix "><li class="part-title">- Closure</li><li class="chapter-item expanded affix "><li class="part-title">- Iterator</li><li class="chapter-item expanded affix "><li class="part-title">- newtype and DST</li><li class="chapter-item expanded affix "><li class="part-title">- Smart pointers TODO</li><li class="chapter-item expanded affix "><li class="part-title">- Box</li><li class="chapter-item expanded affix "><li class="part-title">- Deref</li><li class="chapter-item expanded affix "><li class="part-title">- Drop</li><li class="chapter-item expanded affix "><li class="part-title">- Rc and Arc</li><li class="chapter-item expanded affix "><li class="part-title">- Cell and RefCell</li><li class="chapter-item expanded affix "><li class="part-title">- Weak and Circle reference TODO</li><li class="chapter-item expanded affix "><li class="part-title">- Self referential TODO</li><li class="chapter-item expanded affix "><li class="part-title">- Threads TODO</li><li class="chapter-item expanded affix "><li class="part-title">- Basic using</li><li class="chapter-item expanded affix "><li class="part-title">- Message passing</li><li class="chapter-item expanded affix "><li class="part-title">- Sync</li><li class="chapter-item expanded affix "><li class="part-title">- Atomic</li><li class="chapter-item expanded affix "><li class="part-title">- Send and Sync</li><li class="chapter-item expanded affix "><li class="part-title">- Global variables TODO</li><li class="chapter-item expanded affix "><li class="part-title">- Errors TODO</li><li class="chapter-item expanded affix "><li class="part-title">- Unsafe doing</li><li class="chapter-item expanded affix "><li class="part-title">- Inline assembly</li><li class="chapter-item expanded affix "><li class="part-title">- Macro TODO</li><li class="chapter-item expanded affix "><li class="part-title">- Tests TODO</li><li class="chapter-item expanded affix "><li class="part-title">- Write Tests</li><li class="chapter-item expanded affix "><li class="part-title">- Benchmark</li><li class="chapter-item expanded affix "><li class="part-title">- Unit and Integration</li><li class="chapter-item expanded affix "><li class="part-title">- Assertions</li><li class="chapter-item expanded affix "><li class="part-title">- Async/Await TODO</li><li class="chapter-item expanded affix "><li class="part-title">- async and await!</li><li class="chapter-item expanded affix "><li class="part-title">- Future</li><li class="chapter-item expanded affix "><li class="part-title">- Pin and Unpin</li><li class="chapter-item expanded affix "><li class="part-title">- Stream</li><li class="chapter-item expanded affix "><li class="part-title"></li><li class="chapter-item expanded affix "><li class="part-title">- Standard Library TODO</li><li class="chapter-item expanded affix "><li class="part-title">- String</li><li class="chapter-item expanded affix "><li class="part-title"></li><li class="chapter-item expanded affix "><li class="part-title">- Fighting with Compiler</li><li class="chapter-item expanded affix "><li class="part-title">- Borrowing</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Rust By Practice</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/sunface/rust-by-practice" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/sunface/rust-by-practice/edit/master/en/src/pattern-match/patterns.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="patterns"><a class="header" href="#patterns">Patterns</a></h1>
+<ol>
+<li>🌟🌟 Use <code>|</code> to match several values, use <code>..=</code> to match an inclusive range.</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span>fn match_number(n: i32) {
+    match n {
+	1 =&gt; println!(&quot;One!&quot;),
+	
+	2 | 3 | 4 | 5 =&gt; println!(&quot;match 2 -&gt; 5&quot;),
+	
+	6..=10 =&gt; println!(&quot;match 6 -&gt; 10&quot;),
+
+	_ =&gt; println!(&quot;match 11 -&gt; +infinite&quot;)
+    }
+}
+<span class="boring">match_number(4);
+</span><span class="boring">} 
+</span></code></pre></pre>
+<ol start="2">
+<li>🌟🌟🌟 The <code>@</code> operator lets us create a variable that holds a value, at the same time we are testing that value to see whether it matches a pattern.</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">struct Point {
+    x: i32,
+    y: i32,
+}
+
+fn main() {
+    let p = Point { x: 5, y: 10 };
+
+    match p {
+        Point { x, y: 0 } =&gt; println!(&quot;On the x axis at {}&quot;, x),
+        Point { x: 0..=5, y: y@ (10 | 20 | 30) } =&gt; println!(&quot;On the y axis at {}&quot;, y),
+        Point { x, y } =&gt; println!(&quot;On neither axis: ({}, {})&quot;, x, y),
+    }
+}
+</code></pre></pre>
+<ol start="3">
+<li>🌟🌟🌟</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">enum Message {
+    Hello { id: i32 },
+}
+
+fn main() {
+    let msg = Message::Hello { id: 5 };
+
+    match msg {
+        Message::Hello {
+            id:  id@3..=7,
+        } =&gt; println!(&quot;Found an id in range [3, 7]: {}&quot;, id),
+        Message::Hello { id: newid@(10 | 11 | 12) } =&gt; {
+            println!(&quot;Found an id in another range [10, 12]: {}&quot;, newid)
+        }
+        Message::Hello { id } =&gt; println!(&quot;Found some other id: {}&quot;, id),
+    }
+}
+</code></pre></pre>
+<ol start="4">
+<li>🌟🌟 A match guard is an additional if condition specified after the pattern in a match arm that must also match, along with the pattern matching, for that arm to be chosen.</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">fn main() {
+    let num = Some(4);
+    let split = 5;
+    match num {
+        Some(x) if x != 0 =&gt; assert!(x &lt; split),
+        Some(x) =&gt; assert!(x &gt;= split),
+        None =&gt; (),
+    }
+
+    println!(&quot;Success!&quot;);
+}
+</code></pre></pre>
+<ol start="5">
+<li>🌟🌟 Ignoring remaining parts of the value with <code>..</code></li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">fn main() {
+    let numbers = (2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048);
+
+    match numbers {
+        (first,..,last) =&gt; {
+           assert_eq!(first, 2);
+           assert_eq!(last, 2048);
+        }
+    }
+
+    println!(&quot;Success!&quot;);
+}
+</code></pre></pre>
+<ol start="6">
+<li>🌟🌟 Using pattern <code>&amp;mut V</code> to match a mutable reference needs you to be very careful, due to <code>V</code> being a value  after matching.</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">fn main() {
+    let mut v = String::from(&quot;hello,&quot;);
+    let r = &amp;mut v;
+
+    match r {
+        value =&gt; value.push_str(&quot; world!&quot;), // r is already a mutable borrow
+    }
+
+	// why can't we just do 
+	// r.push_str(&quot; world!&quot;) 😆
+	println!(&quot;{}&quot;, v);
+}
+</code></pre></pre>
+<blockquote>
+<p>You can find the solutions <a href="https://github.com/sunface/rust-by-practice">here</a>(under the solutions path), but only use it when you need it</p>
+</blockquote>
+
+                        <div id="giscus-container"></div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../pattern-match/match-iflet.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../pattern-match/match-iflet.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "pattern-match/patterns.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../assets/custom3.js"></script>
+        <script type="text/javascript" src="../assets/lang.js"></script>
+    </body>
+</html>
