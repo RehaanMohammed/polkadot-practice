@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"macro":[["assert_panic","Asserts that `$stmt` panics."]]};

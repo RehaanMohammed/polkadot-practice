@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Variables - Rust By Practice</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Learn Rust with Example, Exercise and real Practice, written with ❤️ by https://course.rs team">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/style1.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../why-exercise.html"><strong aria-hidden="true">1.</strong> Rust By Practice</a></li><li class="chapter-item expanded "><a href="../elegant-code-base.html"><strong aria-hidden="true">2.</strong> Small projects with Elegant code</a></li><li class="chapter-item expanded "><a href="../intro.html"><strong aria-hidden="true">3.</strong> First Assignment</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../first-assignment/variables.html" class="active"><strong aria-hidden="true">3.1.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../first-assignment/basic-types/intro.html"><strong aria-hidden="true">3.2.</strong> Basic Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../first-assignment/basic-types/numbers.html"><strong aria-hidden="true">3.2.1.</strong> Numbers</a></li><li class="chapter-item expanded "><a href="../first-assignment/basic-types/char-bool-unit.html"><strong aria-hidden="true">3.2.2.</strong> Char, Bool and Unit</a></li><li class="chapter-item expanded "><a href="../first-assignment/basic-types/statements-expressions.html"><strong aria-hidden="true">3.2.3.</strong> Statements and Expressions</a></li><li class="chapter-item expanded "><a href="../first-assignment/basic-types/functions.html"><strong aria-hidden="true">3.2.4.</strong> Functions</a></li></ol></li><li class="chapter-item expanded "><a href="../first-assignment/ownership/intro.html"><strong aria-hidden="true">3.3.</strong> Ownership and Borrowing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../first-assignment/ownership/ownership.html"><strong aria-hidden="true">3.3.1.</strong> Ownership</a></li><li class="chapter-item expanded "><a href="../first-assignment/ownership/borrowing.html"><strong aria-hidden="true">3.3.2.</strong> Reference and Borrowing</a></li></ol></li><li class="chapter-item expanded "><a href="../first-assignment/compound-types/intro.html"><strong aria-hidden="true">3.4.</strong> Compound Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../first-assignment/compound-types/string.html"><strong aria-hidden="true">3.4.1.</strong> string</a></li><li class="chapter-item expanded "><a href="../first-assignment/compound-types/array.html"><strong aria-hidden="true">3.4.2.</strong> Array</a></li><li class="chapter-item expanded "><a href="../first-assignment/compound-types/slice.html"><strong aria-hidden="true">3.4.3.</strong> Slice</a></li><li class="chapter-item expanded "><a href="../first-assignment/compound-types/tuple.html"><strong aria-hidden="true">3.4.4.</strong> Tuple</a></li><li class="chapter-item expanded "><a href="../first-assignment/compound-types/struct.html"><strong aria-hidden="true">3.4.5.</strong> Struct</a></li><li class="chapter-item expanded "><a href="../first-assignment/compound-types/enum.html"><strong aria-hidden="true">3.4.6.</strong> Enum</a></li></ol></li><li class="chapter-item expanded "><a href="../first-assignment/flow-control.html"><strong aria-hidden="true">3.5.</strong> Flow Control</a></li><li class="chapter-item expanded "><a href="../first-assignment/pattern-match/intro.html"><strong aria-hidden="true">3.6.</strong> Pattern Match</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../first-assignment/pattern-match/match-iflet.html"><strong aria-hidden="true">3.6.1.</strong> match, matches! and if let</a></li><li class="chapter-item expanded "><a href="../first-assignment/pattern-match/patterns.html"><strong aria-hidden="true">3.6.2.</strong> Patterns</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../second-assignment/intro.html"><strong aria-hidden="true">4.</strong> Second assignment</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../second-assignment/method.html"><strong aria-hidden="true">4.1.</strong> Method & Associated function</a></li><li class="chapter-item expanded "><a href="../second-assignment/generics-traits/intro.html"><strong aria-hidden="true">4.2.</strong> Generics and Traits</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../second-assignment/generics-traits/generics.html"><strong aria-hidden="true">4.2.1.</strong> Generics</a></li><li class="chapter-item expanded "><a href="../second-assignment/generics-traits/const-generics.html"><strong aria-hidden="true">4.2.2.</strong> Const Generics</a></li><li class="chapter-item expanded "><a href="../second-assignment/generics-traits/traits.html"><strong aria-hidden="true">4.2.3.</strong> Traits</a></li><li class="chapter-item expanded "><a href="../second-assignment/generics-traits/trait-object.html"><strong aria-hidden="true">4.2.4.</strong> Trait Object</a></li><li class="chapter-item expanded "><a href="../second-assignment/generics-traits/advanced-traits.html"><strong aria-hidden="true">4.2.5.</strong> Advanced Traits</a></li></ol></li><li class="chapter-item expanded "><a href="../second-assignment/collections/intro.html"><strong aria-hidden="true">4.3.</strong> Collection Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../second-assignment/collections/string.html"><strong aria-hidden="true">4.3.1.</strong> String</a></li><li class="chapter-item expanded "><a href="../second-assignment/collections/vector.html"><strong aria-hidden="true">4.3.2.</strong> Vector</a></li><li class="chapter-item expanded "><a href="../second-assignment/collections/hashmap.html"><strong aria-hidden="true">4.3.3.</strong> HashMap</a></li></ol></li><li class="chapter-item expanded "><a href="../second-assignment/type-conversions/intro.html"><strong aria-hidden="true">4.4.</strong> Type Conversion</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../second-assignment/type-conversions/as.html"><strong aria-hidden="true">4.4.1.</strong> as</a></li><li class="chapter-item expanded "><a href="../second-assignment/type-conversions/from-into.html"><strong aria-hidden="true">4.4.2.</strong> From/Into</a></li><li class="chapter-item expanded "><a href="../second-assignment/type-conversions/others.html"><strong aria-hidden="true">4.4.3.</strong> Others</a></li></ol></li><li class="chapter-item expanded "><a href="../second-assignment/result-panic/intro.html"><strong aria-hidden="true">4.5.</strong> Result and panic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../second-assignment/result-panic/panic.html"><strong aria-hidden="true">4.5.1.</strong> panic!</a></li><li class="chapter-item expanded "><a href="../second-assignment/result-panic/result.html"><strong aria-hidden="true">4.5.2.</strong> Result and ?</a></li></ol></li><li class="chapter-item expanded "><a href="../second-assignment/crate-module/intro.html"><strong aria-hidden="true">4.6.</strong> Crate and Module</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../second-assignment/crate-module/crate.html"><strong aria-hidden="true">4.6.1.</strong> Package and Crate</a></li><li class="chapter-item expanded "><a href="../second-assignment/crate-module/module.html"><strong aria-hidden="true">4.6.2.</strong> Module</a></li><li class="chapter-item expanded "><a href="../second-assignment/crate-module/use-pub.html"><strong aria-hidden="true">4.6.3.</strong> Advanced use and pub</a></li></ol></li><li class="chapter-item expanded "><a href="../second-assignment/comments_docs/src/comments-docs.html"><strong aria-hidden="true">4.7.</strong> Comments and Docs</a></li><li class="chapter-item expanded "><a href="../second-assignment/formatted-output/intro.html"><strong aria-hidden="true">4.8.</strong> Formatted output</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../second-assignment/formatted-output/println.html"><strong aria-hidden="true">4.8.1.</strong> println! and format!</a></li><li class="chapter-item expanded "><a href="../second-assignment/formatted-output/debug-display.html"><strong aria-hidden="true">4.8.2.</strong> Debug and Display</a></li><li class="chapter-item expanded "><a href="../second-assignment/formatted-output/formatting.html"><strong aria-hidden="true">4.8.3.</strong> formating</a></li></ol></li><li class="chapter-item expanded "><a href="../second-assignment/functional-programing/intro.html"><strong aria-hidden="true">4.9.</strong> Functional programing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../second-assignment/functional-programing/cloure.html"><strong aria-hidden="true">4.9.1.</strong> Closure</a></li><li class="chapter-item expanded "><a href="../second-assignment/functional-programing/iterator.html"><strong aria-hidden="true">4.9.2.</strong> Iterator</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Rust By Practice</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/sunface/rust-by-practice" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/sunface/rust-by-practice/edit/master/en/src/first-assignment/variables.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="variables"><a class="header" href="#variables">Variables</a></h1>
+<h3 id="binding-and-mutability"><a class="header" href="#binding-and-mutability">Binding and mutability</a></h3>
+<ol>
+<li></li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">fn main() {
+    let x: i32 = 5; // Uninitialized but used, ERROR !
+
+//Every variable must be initialized before using. duh... 
+
+    let _y: i32; // Uninitialized but also unused, only a Warning !
+
+// The convention is to add '_' before identifiers if you are not going to use them
+
+    assert_eq!(x, 5);
+    println!(&quot;Success!&quot;);
+}
+</code></pre></pre>
+<ol start="2">
+<li></li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">fn main() {
+    let mut x = 1;
+    x += 2; 
+
+// Variables are immutable by default
+    
+    assert_eq!(x, 3);
+    println!(&quot;Success!&quot;);
+}
+</code></pre></pre>
+<h3 id="scope"><a class="header" href="#scope">Scope</a></h3>
+<ol start="3">
+<li></li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">fn main() {
+    let x: i32 = 10;
+//  {
+
+    let y: i32 = 5;
+    println!(&quot;The value of x is {} and value of y is {}&quot;, x, y);
+    
+//  } if braces were enabled then the variable 'y' will be destroyed here 
+
+// Easiest way would be to change the scope of the variable.
+
+    println!(&quot;The value of x is {} and value of y is {}&quot;, x, y); 
+}
+</code></pre></pre>
+<ol start="4">
+<li></li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">fn main() {
+// add function call to &quot;define_x&quot;
+    println!(&quot;{}, world&quot;, define_x()); 
+}
+
+// Here &quot;'a&quot; is the lifetime parameter defined for the string that is returned
+// This helps rust to identify the lifetime of a string variable so that the 
+// compiler can safely destroy the string after it's lifetime is completed.
+// In this example the lifetime &quot;'a&quot; is bound to the function call &quot;define_x&quot;
+// after the function call, the string will be destroyed.
+
+fn define_x&lt;'a&gt;() -&gt; &amp;'a str {
+// Returning &amp;str
+    &quot;hello&quot;
+}
+</code></pre></pre>
+<h3 id="shadowing"><a class="header" href="#shadowing">Shadowing</a></h3>
+<ol start="5">
+<li></li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">fn main() {
+    let x: i32 = 5;
+    {
+// Here the variable x holds the value &quot;12&quot; in this scope
+        let x = 12;
+        assert_eq!(x, 12);
+    }
+
+// Here the value is &quot;5&quot; in this scope
+    assert_eq!(x, 5);
+
+    let x = 42;
+    println!(&quot;{}&quot;, x); // Prints &quot;42&quot;.
+}
+</code></pre></pre>
+<ol start="6">
+<li>🌟🌟 </li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">fn main() {
+    let mut _x: i32 = 1;
+    _x = 7;
+    // Shadowing and re-binding
+    {
+    // Shadowing must be done in a new scope
+    let mut _x = _x; // add &quot;mut&quot; if you're going to mutate
+    _x += 3;
+    
+    }
+
+    let _y = 4;
+    // Shadowing
+    {
+    
+    let _y = &quot;I can also be bound to text!&quot;; 
+    
+    }
+    
+    println!(&quot;Success!&quot;);
+}
+</code></pre></pre>
+<h3 id="unused-variables"><a class="header" href="#unused-variables">Unused variables</a></h3>
+<ol>
+<li></li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">#[allow(unused_variables)] // 1) Allow unused variable
+fn main() {
+    let _x = 1; // 2) The convention is to add &quot;_&quot; before an unused variable 
+}
+
+// Warning: unused variable: `x`
+</code></pre></pre>
+<h3 id="destructuring"><a class="header" href="#destructuring">Destructuring</a></h3>
+<ol start="8">
+<li></li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">fn main() {
+    let (mut x, y) = (1, 2);
+    x += 2;
+
+// Make 'x' mutable
+
+    assert_eq!(x, 3);
+    assert_eq!(y, 2);
+
+    println!(&quot;Success!&quot;);
+}
+</code></pre></pre>
+<h3 id="destructuring-assignments"><a class="header" href="#destructuring-assignments">Destructuring assignments</a></h3>
+<ol start="9">
+<li></li>
+</ol>
+<pre><pre class="playground"><code class="language-rust editable edition2021">fn main() {
+    let (x, y);
+    (x,..) = (3, 4);// 3 is assigned to x
+    [.., y] = [1, 2];// 2 is assigned to y
+// (x,...) is checked with (3, 4)
+
+    assert_eq!([x,y], [3, 2]);
+
+    println!(&quot;Success!&quot;);
+} 
+</code></pre></pre>
+<pre><code class="language-ignore">    ----------
+   |          |
+   |    ---------
+   |   |      |  |
+   |   |      v  v
+  (x, ...) = (3, 4); The &quot;...&quot; is ignored.
+
+ Similarly,
+
+    ---------
+   |         |
+   |    --------
+   |   |     |  |
+   |   |     v  v 
+ [..., y] = [1, 2];
+
+Hence, x = 3 and y = 2
+
+</code></pre>
+
+                        <div id="giscus-container"></div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../first-assignment/basic-types/intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../first-assignment/basic-types/intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "first-assignment/variables.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../assets/custom3.js"></script>
+        <script type="text/javascript" src="../assets/lang.js"></script>
+    </body>
+</html>

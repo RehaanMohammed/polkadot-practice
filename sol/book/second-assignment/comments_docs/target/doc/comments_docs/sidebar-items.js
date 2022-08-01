@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":[["add_three","Add three to the given value and return a [`Option`] type"]],"mod":[["compute","Doing some random arithmetic because, Mafs. I just want to sleep bruh…"]]};
